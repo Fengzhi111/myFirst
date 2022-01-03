@@ -25,7 +25,7 @@ public class RelaxGame {
 			int guessNumber = sc.nextInt();
 			count++;
 			// 判断是否正确
-			if(guessNumber!=0) {
+			if(guessNumber>0 && guessNumber<101) {
 				if (guessNumber < number) {
 					System.out.println("你猜的数字小了哦~（扣0可退出）");
 				} else if (guessNumber > number) {
@@ -34,8 +34,12 @@ public class RelaxGame {
 					System.out.println("太牛啦！你只用" + count + "次就猜对了！");
 					break;
 				}
-				}else {
+			}
+			else if(guessNumber==0){
 				ifcontinue=false;
+			}
+			else {
+				System.out.println("你的输入不合法哦~请输入1~100的数字");
 			}
 		}
 	}
